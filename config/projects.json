@@ -25,7 +25,7 @@
     "blockingTests": null,
     "breakOnFailure": null,
     "numberOfLessons": 30,
-    "completedDate": 1791476678436
+    "completedDate": 1791745820828
   },
   {
     "id": 2,
@@ -53,7 +53,7 @@
     "blockingTests": true,
     "breakOnFailure": true,
     "numberOfLessons": 1,
-    "completedDate": 1791744989994
+    "completedDate": 1791745121121
   },
   {
     "id": 4,
@@ -95,14 +95,14 @@
     "numberOfLessons": 1,
     "blockingTests": false,
     "breakOnFailure": false,
-    "completedDate": 1791744879580
+    "completedDate": 1791745131982
   },
   {
     "id": 7,
     "dashedName": "build-a-submission-form",
     "isIntegrated": false,
     "isPublic": true,
-    "currentLesson": 0,
+    "currentLesson": 18,
     "runTestsOnWatch": true,
     "seedEveryLesson": false,
     "isResetEnabled": false,
