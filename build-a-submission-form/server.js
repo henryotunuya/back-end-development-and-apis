@@ -2,6 +2,7 @@
 import express from "express";
 const app = express()
 import apiRouter from "./routes/api.routes.js"
+import { notFoundHandler, finalErrorHandler } from "./middleware/error.middleware.js";
 
 app.listen(3000, (req, res) => {
     console.log(`localhost:3000`)
@@ -14,6 +15,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/api", apiRouter);
+app.use(notFoundHandler);
+app.use(finalErrorHandler);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
