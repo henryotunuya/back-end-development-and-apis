@@ -1,3 +1,57 @@
+/*
+import http from "http";
+import fs from "fs";
+import { WebSocketServer } from "ws";
+import os from "os";
+
+const PORT = 3000;
+
+const server = http.createServer((req, res) => {
+    fs.readFile("./public/index.html", (error, data) => {
+        res.writeHead(200, {"Content-Type": "text/html"});
+        res.end(data, "utf-8");
+    });
+});
+
+const wss = new WebSocketServer({server});
+
+function getMetrics(){
+    return {
+        loadAvg: os.loadavg(),
+        freeMemMB: (os.freemem() / 1024 / 1024).toFixed(0),
+        totalMemMB: (os.totalmem() / 1024 / 1024).toFixed(0),
+        memUsagePct: (
+            ((os.totalmem() - os.freemem()) / os.totalmem()) *
+            100
+        ).toFixed(1)
+    }
+}
+
+wss.on("connection", (socket) => {
+    console.log("Client connected");
+
+    const interval = setInterval(() => {
+        socket.send(JSON.stringify(getMetrics()));
+    }, 1000);
+
+    socket.on("message", (data) => {
+        console.log("Received:", data.toString());
+    });
+
+    socket.on("close", () => {
+        clearInterval(interval);
+        console.log("Client disconnected");
+    });
+
+    socket.on("error", (err) => {
+        console.error("Socket error:", err);
+    });
+});
+server.listen(PORT, (req, res) => {
+    console.log(`Running http://localhost:${PORT}`);
+});
+*/
+
 import http from "http";
 import fs from "fs";
 import { WebSocketServer } from "ws";
