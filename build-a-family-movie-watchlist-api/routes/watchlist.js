@@ -15,26 +15,11 @@ router.get("/:userId", (req, res) => {
 router.post("/:userId/movies", authorizeModification("parent"), (req, res) => {
     const movie = req.body;
     const id = req.params.userId;
-    console.log("**1")
-    console.log(movie)
-    //if (movie.title.startsWith("Parent")) {
-        res.status(201)
-        addMovie(parseInt(id), movie);
-   // }
-   // return;
-});
-
-/*
-router.post("/:userId/movies", authorizeModification("child"), (req, res) => {
-    console.log("**2")
-    console.log(req.body)
-
-    const movie = req.body;
-    const id = req.params.userId;
+    //console.log("**1")
+    //console.log(movie)
     res.status(201)
     addMovie(parseInt(id), movie);
-
-});*/
+});
 
 router.put("/:userId/movies/:movieId",
     authorizeModification("parent"), (req, res) => {
